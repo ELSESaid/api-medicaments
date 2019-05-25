@@ -14,7 +14,7 @@ class MedicamentsController {
   }
 
   getByName(req, res, next) {
-    this.medicamentsService.getByName(req.query.nom)
+    this.medicamentsService.getByName(req.query.nom, req.query.limit, req.query.get)
       .then((result) => {
         return res.json(result)
       })
