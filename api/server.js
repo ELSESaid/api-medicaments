@@ -53,7 +53,7 @@ function Server (options) {
 
   var server = http.createServer(app);
   this.start = function (onStarted) {
-    server.listen(process.env.PORT || app.get('port'), function (error) {
+    server.listen(app.get('port'), function (error) {
       if (error) {
         logger.error({error: error}, 'Got error while starting server');
         return onStarted(error);
